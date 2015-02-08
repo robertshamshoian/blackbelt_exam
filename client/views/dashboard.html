@@ -1,0 +1,40 @@
+<div ng-controller="MainCtrl">
+<h2>Welcome, {{logged_in_user}}! </h2>
+
+	<table>
+		<tr>
+			<td><input ng-model="new_task" placeholder='Title'><br></td>
+			<td><input ng-model='new_description' placeholder='Description'></input></td>
+			<td>
+				<select ng-model='new_user'>
+					<option value=''>--Select User--</option>"
+					<option ng-repeat='user in users'>{{user.name}}</option>
+				</select> 
+			</td>
+			<td><button ng-click="addTask()">Add to List!</button></td>
+		</tr>
+	</table>
+	<table class='bucketlist'>
+		<thhead>
+			<h4>Before I die I want to...</h4>
+		</thead>
+		<tr ng-repeat="task in tasks">
+			<td>{{task.completed}}</td>
+			<td>{{task.created_by}}</td>
+			<td>{{task.task}}</td>
+			<td>{{task.description}}</td>
+			<td>{{task.created_at | date:'longDate'}}</td>
+		</tr>
+	</table>
+	<br><br><br>
+	<table>
+		<thead>
+			List of Logged Users (Click to view profile:)
+		</thead>
+		<tr ng-repeat='user in users'>
+			<td><a ng-click='getProfile(user._id)' href="" >{{user.name}}</a></td>
+		</tr>
+
+	</table>
+
+</div>

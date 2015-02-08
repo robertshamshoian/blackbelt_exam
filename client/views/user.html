@@ -1,0 +1,29 @@
+<div ng-controller="MainCtrl">
+
+	<table class='bucketlist'>
+		<thhead>
+			<h4>Done:</h4>
+		</thead>
+		<tr ng-repeat="x in completed_tasks">
+			<td><input type='checkbox' ng-click='update(x.user_id)' checked='checked'></td>
+			<td>{{x.created_by}}</td>
+			<td>{{x.task}}</td>
+			<td>{{x.description}}</td>
+			<td>{{x.created_at | date:'longDate'}}</td>
+		</tr>
+	</table>
+	<br><br>
+	<table class='bucketlist'>
+		<thhead>
+			<h4>Pending:</h4>
+		</thead>
+		<tr ng-repeat="y in pending_tasks">
+			<td><input type='checkbox' ng-click='update(x.user_id)'></td>
+			<td>{{y.created_by}}</td>
+			<td>{{y.task}}</td>
+			<td>{{y.description}}</td>
+			<td>{{y.created_at | date:'longDate'}}</td>
+		</tr>
+	</table>
+
+</div>

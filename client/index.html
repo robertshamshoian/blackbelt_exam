@@ -1,0 +1,24 @@
+<html ng-app = "angularExpress">
+<head>
+	<title>Bucket List</title>
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.27/angular.min.js"></script>
+		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.27/angular-route.min.js"></script>
+	<style type="text/css">
+		.bucketlist td{
+			border-right: 1px solid black;
+			padding-left: 20px;
+			padding-right: 20px;
+		}
+
+	</style>
+
+</head>
+<body>
+	<div id='header'>
+	Bucket List | <a href="#dashboard">Home</a> | <a href="#">Logout</a>
+	</div>
+	<div ng-view="">
+	</div>
+	<script type="text/javascript" src="angular.js"></script>
+</body>
+</html>
